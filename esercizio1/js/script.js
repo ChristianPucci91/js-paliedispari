@@ -9,11 +9,13 @@
 // del prompt e della funzione
 
 // prompt utente
-var inputUser = prompt("Inserisci una parola");
+var inputUser = prompt("Inserisci una parola").toLowerCase();
 console.log(inputUser);
+document.getElementById('input_user').innerHTML = inputUser;
 // invertiamo la parola inserita dall'utente creando una funzione
 inputUserReverse = inputUserReverse(inputUser);
 console.log(inputUserReverse);
+document.getElementById('input_reverse').innerHTML = inputUserReverse;
 
 // STEP 2 creare una funzione e delle condizioni if&else
 // per capire se la parola inserita dall'utente sarà palindroma o no.
@@ -42,8 +44,10 @@ function inputUserReverse(inputUser) {
 // inizio condizione if & else
 if (inputUser == inputUserReverse) {
   console.log("la parola è palindroma");
+  document.getElementById('result').innerHTML = "La parola è palindroma";
 }else {
   console.log("la parola non è palindroma");
+  document.getElementById('result').innerHTML = "La parola non è palindroma";
 }
 
 // <<<<<<<<<<<<<<<<<<<<< FINE ESERCIZIO 1 >>>>>>>>>>>>>>>>>>>>>>

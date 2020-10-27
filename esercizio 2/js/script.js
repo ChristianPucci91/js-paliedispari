@@ -15,7 +15,7 @@
 // utilizzo 2 prompt uno con il parseInt e uno a stringa
 
 selectionUser = prompt("Scegli tra pari o dispari");
-console.log("scelta dell'utente ",selectionUser);
+// console.log("scelta dell'utente ",selectionUser);
 
 // utilizziamo un ciclo while per dire finchè la parola che non inserisce
 // l'utente non sarà uguale a "pari" && "dispari" non andrà avanti.
@@ -26,12 +26,14 @@ console.log("scelta dell'utente ",selectionUser);
 }
 // fine ciclo while
 console.log("scelta dell'utente ",selectionUser);
+document.getElementById('user_selection').innerHTML = "Selezione user: " + selectionUser;
+
 
 numberUser = parseInt(prompt("Scegli un numero tra 1 e 5"));
 
-console.log("numero sbagliato user", numberUser);
+// console.log("numero sbagliato user", numberUser);
 
-// inserisco un ciclo while per obbligare l'utente ad inserire un numero compreso 
+// inserisco un ciclo while per obbligare l'utente ad inserire un numero compreso
 // // tra 1 e 5
 
 // inizio ciclo while
@@ -41,6 +43,7 @@ console.log("numero sbagliato user", numberUser);
 // fine ciclo while
 
 console.log("numero inserito dall'utente ",numberUser);
+document.getElementById('user_number').innerHTML ="Numero user: " + numberUser;
 
 // STEP 2 creo una funzione che mi dia dei numeri random usando "math.random()" per
 // il computer.
@@ -59,7 +62,10 @@ var result = evenOdd();
  // fine funzione
 
  console.log("numero random del pc ", numberCpu);
+ document.getElementById('cpu_number').innerHTML = "Numero cpu: "+ numberCpu;
  console.log("la somma è ", sumNumbers);
+ document.getElementById('sum_number').innerHTML = "Somma : "+ sumNumbers;
+
 
  //  STEP 4 con una funzione dovrò stabilire se la somma è uguale a pari o dispari e a seconda
  // della scelta fatta dall'utente scrivere hai vinto o hai perso.
@@ -74,14 +80,18 @@ var result = evenOdd();
   }
   // fine funzione
   console.log("Il risultato è: ",result);
+  document.getElementById('result').innerHTML = "Il risultato è : "+ result;
+
 
   // creiamo una condizione if & else per stabilire chi ha vinto
 
 // inizio condizione if
 if (selectionUser == result) {
   console.log("Hai vinto!");
+  document.getElementById('winner').innerHTML = "Hai vinto!!!";
 }else {
   console.log("Hai perso!");
+  document.getElementById('winner').innerHTML = "Hai perso!!!";
 }
 // fine condizione if
 

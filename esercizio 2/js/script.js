@@ -27,13 +27,44 @@ console.log("numero inserito dall'utente ",numberUser);
 // creo una variabile e dichiaro che sia uguale alla funzione che mi da un numero random per il computer
 var numberCpu = randomCpu(1,5);
 
- function randomCpu(min,max) {
-     return Math.floor(Math.random()* max) +min;
- }
- console.log("numero random del pc ", numberCpu);
-
 // STEP 3 faccio la somma tra il numero inserito dall'utente e quello random dal pc
 // creando una variabile
 
-//  STEP 4 con una funzione dovrò stabilire se la somma è uguale a pari o dispari e a seconda
-// della scelta fatta dall'utente scrivere hai vinto o hai perso.
+var sumNumbers = numberUser + numberCpu;
+// creo una variabile e dichiaro che sia uguale alla funzione che mi dice se la somma è para o dispara
+var result = evenOdd(sumNumbers);
+
+// inizio funzione
+ function randomCpu(min,max) {
+     return Math.floor(Math.random()* max) +min;
+ }
+ // fine funzione
+
+ console.log("numero random del pc ", numberCpu);
+ console.log("la somma è ", sumNumbers);
+
+ //  STEP 4 con una funzione dovrò stabilire se la somma è uguale a pari o dispari e a seconda
+ // della scelta fatta dall'utente scrivere hai vinto o hai perso.
+
+ // inizio funzione
+  function evenOdd(sumNumbers) {
+
+      if (sumNumbers % 2 == 0 ) {
+        return "pari"
+      }
+    return "dispari"
+  }
+  // fine funzione
+  console.log("Il risultato è: ",result);
+
+  // creiamo una condizione if & else per stabilire chi ha vinto
+
+// inizio condizione if
+if (selectionUser == result) {
+  console.log("Hai vinto!");
+}else {
+  console.log("Hai perso!");
+}
+// fine condizione if
+
+// <<<<<<<<<<<<<<<<<<<<< INIZIO ESERCIZIO 2 >>>>>>>>>>>>>>>>>>>>>>

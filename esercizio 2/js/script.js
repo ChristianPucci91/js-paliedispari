@@ -9,7 +9,6 @@
 // Consigli del giorno
 
 
-
 // <<<<<<<<<<<<<<<<<<<<< INIZIO ESERCIZIO 2 >>>>>>>>>>>>>>>>>>>>>>
 
 // STEP 1 chiedere all'utente di scegliere tra pari o dispari e di inserire un numero da 1 a 5
@@ -18,25 +17,44 @@
 selectionUser = prompt("Scegli tra pari o dispari");
 console.log("scelta dell'utente ",selectionUser);
 
+// utilizziamo un ciclo while per dire finchè la parola che non inserisce
+// l'utente non sarà uguale a "pari" && "dispari" non andrà avanti.
+
+// inizio ciclo while
+  while (selectionUser != "pari" && selectionUser != "dispari") {
+  selectionUser = prompt("Per favore, scrivi pari o dispari")
+}
+// fine ciclo while
+console.log("scelta dell'utente ",selectionUser);
+
 numberUser = parseInt(prompt("Scegli un numero tra 1 e 5"));
+
+console.log("numero sbagliato user", numberUser);
+
+// inserisco un ciclo while per obbligare l'utente ad inserire un numero compreso 
+// // tra 1 e 5
+
+// inizio ciclo while
+  while (numberUser < 1 || numberUser > 5 ) {
+  numberUser = parseInt(prompt("Per favore, scrivi un numero tra 1 e 5"));
+}
+// fine ciclo while
+
 console.log("numero inserito dall'utente ",numberUser);
 
 // STEP 2 creo una funzione che mi dia dei numeri random usando "math.random()" per
 // il computer.
 
 // creo una variabile e dichiaro che sia uguale alla funzione che mi da un numero random per il computer
-var numberCpu = randomCpu(1,5);
-
-// STEP 3 faccio la somma tra il numero inserito dall'utente e quello random dal pc
-// creando una variabile
-
+var numberCpu = randomCpu();
+// creo una variabile "sumNumbers" per ottenere la somma dei 2 numeri
 var sumNumbers = numberUser + numberCpu;
 // creo una variabile e dichiaro che sia uguale alla funzione che mi dice se la somma è para o dispara
-var result = evenOdd(sumNumbers);
+var result = evenOdd();
 
 // inizio funzione
- function randomCpu(min,max) {
-     return Math.floor(Math.random()* max) +min;
+ function randomCpu() {
+     return Math.floor(Math.random()* 5 +1);
  }
  // fine funzione
 
@@ -47,7 +65,7 @@ var result = evenOdd(sumNumbers);
  // della scelta fatta dall'utente scrivere hai vinto o hai perso.
 
  // inizio funzione
-  function evenOdd(sumNumbers) {
+  function evenOdd() {
 
       if (sumNumbers % 2 == 0 ) {
         return "pari"
